@@ -11,6 +11,14 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedNews extends Struct.ComponentSchema {
+  collectionName: 'components_shared_news';
+  info: {
+    displayName: 'News';
+  };
+  attributes: {};
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -66,6 +74,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.media': SharedMedia;
+      'shared.news': SharedNews;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
