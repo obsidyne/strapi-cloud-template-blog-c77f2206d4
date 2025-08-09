@@ -16,7 +16,18 @@ export interface SharedNews extends Struct.ComponentSchema {
   info: {
     displayName: 'News';
   };
-  attributes: {};
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    main_photo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    photos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
 }
 
 export interface SharedQuote extends Struct.ComponentSchema {
